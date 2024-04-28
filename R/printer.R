@@ -1,13 +1,18 @@
-#' Title
+#' Printer Function
 #'
-#' @param r
-#' @param x
-#' @param y
+#' @param r What in the second column
+#' @param x What in the first column
 #'
-#' @return
+#' @return A tibble
 #' @export
 #'
+#' @importFrom tibble data_frame
+#' @importFrom utils head
+#'
 #' @examples
-printer = function(r, x, y) {
-  print(paste0("x = ", x))
+#' printer(x = rnorm(5), r = rnorm(5))
+printer = function(r, x) {
+  x = data_frame(x = x, r = r)
+  print(head(x))
+  return(x)
 }
